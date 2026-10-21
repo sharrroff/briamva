@@ -1,0 +1,68 @@
+media:
+  input: media
+  output: /media
+  rename: safe
+  categories: [image]
+
+content:
+  - name: recipes
+    label: Рецепты
+    type: collection
+    path: _recipes
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, category, created]
+      primary: title
+      sort: [created, title]
+      default:
+        sort: created
+        order: desc
+    fields:
+      - name: title
+        label: Название
+        type: string
+        required: true
+      - name: photo
+        label: Фото блюда
+        type: image
+      - name: category
+        label: Раздел
+        type: select
+        options:
+          values: [Завтраки, Супы, Салаты, Закуски, Вторые блюда, Выпечка, Десерты, Напитки]
+      - name: time
+        label: Время, мин
+        type: number
+      - name: servings
+        label: Порций
+        type: number
+      - name: form
+        label: Форма или посуда
+        type: string
+      - name: ingredients
+        label: Ингредиенты
+        description: "Каждый с новой строки, количество через тире: «Сахар — 120 г». Подзаголовок с двоеточием: «Тесто:»"
+        type: text
+      - name: steps
+        label: Шаги приготовления
+        description: "Каждый шаг с новой строки. Этапы можно разделить подзаголовками с двоеточием"
+        type: text
+      - name: note
+        label: Секреты и заметки
+        type: text
+      - name: kcal
+        label: Калории на 100 г
+        description: "Необязательно. КБЖУ показывается на сайте, только если заполнены калории"
+        type: number
+      - name: protein
+        label: Белки на 100 г
+        type: number
+      - name: fat
+        label: Жиры на 100 г
+        type: number
+      - name: carbs
+        label: Углеводы на 100 г
+        type: number
+      - name: created
+        label: Дата добавления
+        type: date

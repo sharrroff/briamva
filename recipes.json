@@ -1,0 +1,6 @@
+---
+layout: null
+---
+[{% assign list = site.recipes | sort: "created", "last" | reverse %}{% for r in list %}
+{"id":{{ r.slug | jsonify }},"title":{{ r.title | jsonify }},"category":{{ r.category | jsonify }},"time":{{ r.time | default: 0 | jsonify }},"servings":{{ r.servings | default: 0 | jsonify }},"form":{{ r.form | jsonify }},"photo":{{ r.photo | jsonify }},"ingredients":{{ r.ingredients | jsonify }},"steps":{{ r.steps | jsonify }},"note":{{ r.note | jsonify }},"kcal":{{ r.kcal | default: 0 | jsonify }},"protein":{{ r.protein | default: 0 | jsonify }},"fat":{{ r.fat | default: 0 | jsonify }},"carbs":{{ r.carbs | default: 0 | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+]

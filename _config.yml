@@ -1,0 +1,8 @@
+title: Briamva Recipes
+description: Домашние рецепты Briamva
+collections:
+  recipes:
+    output: false
+exclude:
+  - README.md
+  - .pages.yml
