@@ -1,2 +1,2 @@
 # briamva
-Рецепты Briamva
+briamva recipes
